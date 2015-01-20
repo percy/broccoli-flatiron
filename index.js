@@ -29,7 +29,7 @@ Flatiron.prototype.write = function (readTree, destDir) {
         if (fs.lstatSync(path.join(srcDir, entry)).isDirectory())
           obj[entry] = readDirectory(path.join(srcDir, entry));
         else
-          obj[entry.split(".")[0]] = JSON.parse(fs.readFileSync(path.join(srcDir, entry)));
+          obj[entry.split(".")[0]] = fs.readFileSync(path.join(srcDir, entry), { encoding: "utf8" });
       });
 
       return obj;
