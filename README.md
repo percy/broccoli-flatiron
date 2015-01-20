@@ -1,22 +1,23 @@
-# Broccoli JSON Concat
+# Broccoli Flatiron
 
 ## Usage
 
 Create a payload file based upon directory structure.
 
 ```javascript
-var jsonConcat = require('broccoli-json-concat');
+var flatiron = require("broccoli-flatiron");
 
-var tree = jsonConcat(targetDirectory);
+var tree = flatiron(targetDirectory);
 ```
 
 ## Documentation
 
+- `option.outputFile`
+- `option.trimExtensions`
+
 ## ZOMG!!! TESTS?!?!!?
 
-I know, right?
-
-Running the tests:
+Yeah, no. Not now. But when I finally add some, you can run them like so:
 
 ```javascript
 npm install
