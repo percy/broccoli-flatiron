@@ -1,13 +1,14 @@
 {
-  "name": "broccoli-json-concat",
-  "version": "0.0.4",
-  "description": "Broccoli plugin to create json object from directory structures",
+  "name": "broccoli-flatiron",
+  "version": "0.0.0",
+  "description": "Broccoli plugin to create json objects from directory structures",
   "main": "index.js",
-  "author": "Brian Cardarella",
+  "author": "Jan Buschtöns",
+  "contributor": "Brian Cardarella",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/dockyard/broccoli-json-concat.git"
+    "url": "https://github.com/buschtoens/broccoli-flatiron.git"
   },
   "scripts": {
     "test": "mocha tests/"
