@@ -36,10 +36,10 @@ Flatiron.prototype.write = function (readTree, destDir) {
       return obj;
     }
 
-    output = [_this.options.variableName, JSON.stringify(obj, null, 2)];
+    output = "export default " + JSON.stringify(obj, null, 2);
 
     mkdirp.sync(path.join(destDir, path.dirname(_this.options.outputFile)));
-    fs.writeFileSync(path.join(destDir, _this.options.outputFile), output.join(" = "));
+    fs.writeFileSync(path.join(destDir, _this.options.outputFile), output);
   });
 }
 
