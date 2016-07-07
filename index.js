@@ -7,21 +7,21 @@ var fs = require("fs"),
 Flatiron.prototype = Object.create(Writer.prototype);
 Flatiron.prototype.constructor = Flatiron;
 
-function Flatiron (inputTree, options) {
+function Flatiron(inputTree, options) {
   if (!(this instanceof Flatiron)) return new Flatiron(inputTree, options);
 
   this.inputTree = inputTree;
   this.options = options;
 }
 
-Flatiron.prototype.write = function (readTree, destDir) {
+Flatiron.prototype.write = function(readTree, destDir) {
   var _this = this;
 
   return readTree(this.inputTree).then(function(srcDir) {
     var obj = readDirectory(srcDir),
         output;
 
-    function readDirectory (srcDir) {
+    function readDirectory(srcDir) {
       var obj = {},
           entries = fs.readdirSync(srcDir);
 
@@ -34,6 +34,9 @@ Flatiron.prototype.write = function (readTree, destDir) {
       });
 
       return obj;
+    }
+    if (_this.options.afterBuild) {
+      _this.options.afterBuild(obj);
     }
 
     output = "export default " + JSON.stringify(obj, null, 2);
